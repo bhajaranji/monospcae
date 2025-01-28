@@ -1,0 +1,36 @@
+
+// Here " Admin " folder for creating leads-dashboard, moodboard and other featue thats used by after login.
+
+// Here " Frontend " folder for our remaining layout like home page , login, Sign-up etc.
+
+// For Run the Admin folder commands : ->
+    cd Admin
+    npm run dev
+
+
+// For Run the Frontend folder commands :->
+    cd Frontend
+    npm run dev
+
+// For check all Dependencies : ->
+
+    Go to in package.json
+
+___________________________________________________________________________________________________________________________
+
+*****About packages : ->
+
+    -> In This project we use react-vite
+
+****** Dependencies : ->
+
+    -> We install these following Dependencies for Frontend
+        1. axios
+        2. react-toastify
+        3. react-router-dom
+        4. recharts
+        5. react-icons
+        6. react
+
+******* For Charts : ->
+        using recharts for using all charts.

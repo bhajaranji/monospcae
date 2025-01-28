@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@100..900&display=swap');
+*{
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+  font-family:outfit;
+}
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+hr{
+  height: 1px;
+  background-color: #a9a9a9;
+  
+}
+
+
+
+/*.containt{
+  flex: 1; 
+  padding: 20px;
+  background-color: #f5f5f5; 
+  overflow-y: auto; 
+}  */
+
+
+
+/* Main Layout */
+.main-layout {
+  display: flex; /* Side-by-side layout */
+  height: 100vh; /* Full screen height */
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Keep it fixed on the side */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Dashboard Content */
+.dashboard-content {
+   margin-left: 150px; /*Initially : 200px  Matches the sidebar width */
+  padding: 20px; /* Add padding for spacing */
+  width: calc(100% - 50px); /*Initially : 100% - 250px Full width minus sidebar */
+  overflow-y: auto; /* Enable scrolling if content is large */
+  background-color: white;
+  box-sizing: border-box;
+}

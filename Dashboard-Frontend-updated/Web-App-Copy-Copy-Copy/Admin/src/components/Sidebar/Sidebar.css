@@ -1,0 +1,89 @@
+.sidebar{ 
+    
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 4%;  
+    width: 20%;
+    height: 100vh;
+    border: 2px solid rgb(222, 218, 218);
+    display: flex;
+}
+
+.sidebar-logo img{
+    height: 65px;
+    width: 65px;
+    align-items: center;
+    border-bottom: 1.5px solid gray;
+    cursor: pointer;
+}
+
+.sidebar-options{
+    padding-bottom: 180px;
+
+}
+.sidebar-option img{
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    margin-left: 11px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.sidebar-option .vendor{
+    margin-right: 5px;
+}
+
+.sidebar-option p{
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 7px;
+    cursor: pointer;
+    
+}
+   .profile{
+        padding-left: 30px;
+        /* border-top: 1.5px solid gray; */
+        margin-bottom: 20px;
+    
+    }
+.search-icon{
+    margin-bottom: 50px;
+    margin-left: 35px;
+    background-color: white;
+    
+
+}
+ 
+.search-icon .icon{
+    height: 40px;
+    width: 40px;
+    margin-right: 40px;
+    cursor: pointer;
+    /* padding-bottom: 20px;  */
+     margin-bottom: 25px;
+     border-top: 1.5px solid gray;
+}
+
+.profile .prof{
+    height: 60px;
+    width: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    margin-bottom: 1px;
+}
+
+
+
+.sidebar-option.active{
+    color: #8F57FE;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+@media (max-width:900px) {
+    .sidebar-option p{
+        display: none;
+    }
+}
+
