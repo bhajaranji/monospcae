@@ -18,7 +18,7 @@ const leadSchema = mongoose.Schema(
     budget: {
       type: [Number],
       validate: {
-        validator: (value) => value.length === 2,
+        validator: (value) => value.length === 2 || value.length === 0,
         message: "Budget must contain exactly two numbers"
       }
     },

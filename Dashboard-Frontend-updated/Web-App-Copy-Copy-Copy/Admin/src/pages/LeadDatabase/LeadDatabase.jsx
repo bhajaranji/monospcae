@@ -78,6 +78,8 @@ function LeadDatabase() {
         category: '',
         date: '',
         status: 'new',
+        contact: '',
+        budget: [],
       });
     } catch (error) {
       console.error('Error adding lead:', error);

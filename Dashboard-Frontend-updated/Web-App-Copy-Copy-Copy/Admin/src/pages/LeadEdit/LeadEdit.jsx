@@ -100,7 +100,7 @@ function LeadEdit(){
                 <li><span class="rt">Event Date :</span><span>&ensp;&ensp;{new Date(lead.date).toLocaleDateString()}</span></li>
                 <li><span class="rt">Category :</span><span>&ensp;&ensp;{lead.category}</span></li>
                 <li><span class="rt">Budget :</span><span>&ensp;&ensp;{Array.isArray(lead.budget) && lead.budget.length === 2 ? `${lead.budget[0]}L - ${lead.budget[1]}L` : 'N/A'}</span></li>
-                <li><span class="rt">Guests :</span><span>&ensp;&ensp;150</span></li>
+                {/* <li><span class="rt">Guests :</span><span>&ensp;&ensp;150</span></li> */}
                 <li><span class="rt">Contact No. :</span><span>&ensp;&ensp;{lead.contact ? '+91 ' + lead.contact : 'N/A'}</span></li>
                 <li><span class="rt">Email :</span><span>&ensp;&ensp;{lead.email}</span></li>
             </ul>
