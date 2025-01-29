@@ -4,6 +4,7 @@ import './LeadDatabase.css';
 import '../../components/TableComponent/TableComponent.css';
 import { useNavigate } from 'react-router-dom';
 import LeadEdit from '../LeadEdit/LeadEdit';
+import { API_BASE_URL } from '../../../../frontend/src/config';
 
 function LeadDatabase() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -20,6 +21,8 @@ function LeadDatabase() {
   const [popupData, setPopupData] = useState(null);
   const navigate = useNavigate();
 
+  // const REACT_APP_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   const handleRowClick = (id) => {
     navigate('/lead-edit', { state : { leadId: id}});
   };
@@ -28,7 +31,7 @@ function LeadDatabase() {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/leads', {
+        const response = await axios.get(`${API_BASE_URL}/api/leads`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`, // assuming the JWT token is stored in localStorage
           },
@@ -59,7 +62,7 @@ function LeadDatabase() {
   // Function to add the new lead to the backend and update the frontend
   const handleAddLead = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/leads', formData, {
+      const response = await axios.post(`${API_BASE_URL}/api/leads`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -104,7 +107,7 @@ function LeadDatabase() {
   
   const deleteRow = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/leads/${id}`, {
+      await axios.delete(`${API_BASE_URL}/api/leads/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
@@ -123,7 +126,7 @@ function LeadDatabase() {
   const handleStatusChange = async (leadId, newStatus) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/leads/${leadId}`,
+        `${API_BASE_URL}/api/leads/${leadId}`,
         { status: newStatus },
         {
           headers: {

@@ -5,7 +5,7 @@ import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 // import ConvertClient from '../ConvertClient/ConvertClient'
 import EditPre from '../EditPre/EditPre';
-
+import { API_BASE_URL } from '../../../../frontend/src/config';
 
 function LeadEdit(){
 
@@ -16,6 +16,8 @@ function LeadEdit(){
 
   const location = useLocation();
   const navigate = useNavigate();
+
+  // const REACT_APP_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
   const { leadId } = location.state || {}; // Access lead details from props
 
@@ -37,7 +39,7 @@ function LeadEdit(){
 
     const fetchLeadDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/leads/${leadId}`, {
+        const response = await axios.get(`${API_BASE_URL}/api/leads/${leadId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
@@ -47,7 +49,7 @@ function LeadEdit(){
         
         // Fetch preferences for the lead
         const preferencesResponse = await axios.get(
-          `http://localhost:5000/api/preferences/${leadId}`,
+          `${API_BASE_URL}/api/preferences/${leadId}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

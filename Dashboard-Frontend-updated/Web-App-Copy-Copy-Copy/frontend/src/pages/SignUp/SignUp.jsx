@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 const SignUp = () => {
   // const handleAdmin = () => {
@@ -17,6 +18,8 @@ const SignUp = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  // const REACT_APP_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   // Handle form field changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +30,7 @@ const SignUp = () => {
     e.preventDefault();
     setError(""); // Clear any previous error
     try {
-      const response = await axios.post("http://localhost:5000/api/users/signup", formData);
+      const response = await axios.post(`${API_BASE_URL}/api/users/signup`, formData);
       console.log(response.data); // Optional: Debug response
       alert("Sign-up successful!"); // Optional success message
       navigate("/leads"); // Redirect to login page

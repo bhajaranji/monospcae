@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./EditPre.css";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
-
+import { API_BASE_URL } from "../../../../frontend/src/config";
 
 function EditPre() {
   
@@ -19,6 +19,8 @@ function EditPre() {
     haldi: true,
     reception: true,
   });
+
+  // const REACT_APP_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
  
 
   const handleMinChange = (e) => {
@@ -61,7 +63,7 @@ function EditPre() {
     
     try {
       // Update the lead's budget using the backend API
-      const response = await fetch(`http://localhost:5000/api/leads/${leadId}`, {
+      const response = await fetch(`${API_BASE_URL}/api/leads/${leadId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +95,7 @@ function EditPre() {
       try {
         // Check if the preference already exists
         const response = await fetch(
-          `http://localhost:5000/api/preferences/${leadId}/${form.name}/id`, 
+          `${API_BASE_URL}/api/preferences/${leadId}/${form.name}/id`, 
           {
             method: "GET",
             headers: {
@@ -107,7 +109,7 @@ function EditPre() {
   
         if (response.ok && data.id) {
           // Preference exists, update it
-          await fetch(`http://localhost:5000/api/preferences/${data.id}`, {
+          await fetch(`${API_BASE_URL}/api/preferences/${data.id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -125,7 +127,7 @@ function EditPre() {
           });
         } else if (response.status === 404) {
           // Preference not found, create a new one
-          await fetch("http://localhost:5000/api/preferences", {
+          await fetch(`${API_BASE_URL}/api/preferences`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
